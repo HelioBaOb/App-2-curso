@@ -1,0 +1,14 @@
+<div class="center">
+    <div class="card" style="width: 20rem;" *ngIf="!loading">
+        <img src={{product?.image}} class="card-img-top" alt={{product?.title}}>
+        <div class="card-body">
+            <h5 class="card-title">Product: {{product?.title | uppercase}}</h5>
+            <h6 class="card-text" [ngStyle]="{'color': color}">Price: {{product?.price | currency}}</h6>
+            <p class="card-text" *ngIf="product?.description">Description: {{product?.description}}</p>
+        </div>
+    </div>
+</div>
+
+<ng-container *ngIf="loading">
+    <i style="color: blue">Cargando información...</i>
+</ng-container>
